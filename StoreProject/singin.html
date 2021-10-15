@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="\Scripts\jquery-3.3.1.js"></script>
+    <script src="\Scripts\bootstrap.js"></script>
+    <link rel="stylesheet" href="\Content\bootstrap-icons.css">
+    <link rel="stylesheet" href="\Content\bootstrap.css">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+         input{
+            text-align:center;
+            display:block;
+            margin:30px;
+            width:400px;
+            height:40px;
+            border-radius:50px;
+        }
+        div{
+            margin:200px auto 0 450px
+        }
+        button{
+            text-align:center;
+            width:200px;
+            height:40px;
+            margin-left:125px
+        }
+    </style>
+    <div>
+        <input id="name" type="text" placeholder="userame">
+        <input id="pass" type="password" placeholder="password">
+        <button id="btn" class="btn btn-success">singin</button>
+    </div>
+    <script>
+
+        function person(){
+            var name = '';
+            var family = '';
+            var number = 0;
+        }
+
+        var p = new person();
+
+        $("#btn").click(function () {
+            p.family = $("#name").val();
+            p.number = $("#pass").val();
+            $.get('/human/singin', p, function (data) {
+                if (data == true) {
+                    window.open('admin.html');
+                }
+                if (data == false) {
+                    alert('نام کاربری یا رمز عبور اشتباه است')
+                }
+            });
+        });
+    </script>
+</body>
+</html>

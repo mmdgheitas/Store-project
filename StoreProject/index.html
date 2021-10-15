@@ -1,0 +1,483 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <script src="Scripts/bootstrap.js"></script>
+    <meta charset="utf-8" />
+    <link href="Content/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="Content/animate.css" />
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/jquery-3.3.1.js"></script>
+    <title></title>
+</head>
+<body ng-app="mainapp">
+    <style>
+        h1 {
+            text-align: center;
+            margin-top: -100px;
+            margin-bottom: 80px;
+            display: inline-block;
+            margin-left: 250px;
+        }
+
+        img {
+            border-radius: 30px;
+            width: 300px;
+            height: 150px;
+            margin: 10px
+        }
+
+        #item {
+            text-align: center;
+            background-color: blue;
+            padding-top: 90px;
+            width: 100%;
+            height: 200px;
+        }
+
+        #sell_item {
+            margin: 20px;
+            width: 200px;
+            height: 300px;
+            background-color: burlywood;
+            border-radius: 50px;
+            font-size: 5rem;
+        }
+
+        ul {
+            float: right;
+            margin: 40px 60px 40px;
+            text-align: right;
+        }
+
+        li {
+            direction: rtl;
+        }
+
+        .items {
+            display: inline-block;
+            margin: 20px;
+        }
+
+        .item {
+            margin: 0 10px 10px 0;
+            background-color: white;
+            width: 250px;
+        }
+
+            .item img {
+                margin: 5px;
+                display: block;
+                width: 250px;
+                height: 250px;
+            }
+
+        #a_u {
+            display: none;
+            border: solid;
+            color: whitesmoke;
+            background-color: #5fb415;
+            border-radius: 50px;
+            text-align: center;
+            width: 30%;
+            float: right;
+        }
+    </style>
+
+    <header>
+        <img src="logo.png" />
+        <ul>
+            <li><a href="admin.html" target="_blank">admin</a></li>
+            <li><a href="singin.html" target="_blank">ورود</a></li>
+            <li><a href="login.html" target="_blank">عضویت</a></li>
+            <li><a href="card.html"> خرید</a></li>
+        </ul>
+        <h1 class="animate__animated  animate__pulse  animate__infinite">Store Project</h1>
+
+    </header>
+    <hr>
+
+
+    <!--slider -->
+    <div id="c" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div id="item" class="carousel-item active">TEST1</div>
+            <div id="item" class="carousel-item">TEST2</div>
+            <div id="item" class="carousel-item ">TEST3</div>
+            <div id="item" class="carousel-item ">TEST4</div>
+        </div>
+        <button class="carousel-control-next carousel-control-next-icon" type="button" data-bs-target="#c" data-bs-slide="next"></button>
+        <button class="carousel-control-prev carousel-control-prev-icon" type="button" data-bs-target="#c" data-bs-slide="prev"></button>
+    </div>
+    <div id="s" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="items">
+                    <div class="item">
+                        <img src="https://i.pinimg.com/236x/f4/c0/2b/f4c02b08f121ec698f0ebf2db878ea73.jpg" />
+                        <h2>item 1</h2>
+                        <br />
+                        <p>
+                            price:$500
+                        </p>
+                        <button class="btn btn-success" type="button">
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="item">
+                        <img src="https://i.pinimg.com/236x/f4/c0/2b/f4c02b08f121ec698f0ebf2db878ea73.jpg" />
+                        <h2>item 1</h2>
+                        <br />
+                        <p>
+                            price:$500
+                        </p>
+                        <button class="btn btn-success" type="button">
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="item">
+                        <img src="https://i.pinimg.com/236x/f4/c0/2b/f4c02b08f121ec698f0ebf2db878ea73.jpg" />
+                        <h2>item 1</h2>
+                        <br />
+                        <p>
+                            price:$500
+                        </p>
+                        <button class="btn btn-success" type="button">
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="item">
+                        <img src="https://i.pinimg.com/236x/f4/c0/2b/f4c02b08f121ec698f0ebf2db878ea73.jpg" />
+                        <h2>item 1</h2>
+                        <br />
+                        <p>
+                            price:$500
+                        </p>
+                        <button class="btn btn-success" type="button">
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item ">
+                <div class="items">
+                    <div class="item">
+                        <img src="https://i.pinimg.com/236x/f4/c0/2b/f4c02b08f121ec698f0ebf2db878ea73.jpg" />
+                        <h2>item 2</h2>
+                        <br />
+                        <p>
+                            price:$500
+                        </p>
+                        <button class="btn btn-success" type="button">
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="item">
+                        <img src="https://i.pinimg.com/236x/f4/c0/2b/f4c02b08f121ec698f0ebf2db878ea73.jpg" />
+                        <h2>item 2</h2>
+                        <br />
+                        <p>
+                            price:$500
+                        </p>
+                        <button class="btn btn-success" type="button">
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="item">
+                        <img src="https://i.pinimg.com/236x/f4/c0/2b/f4c02b08f121ec698f0ebf2db878ea73.jpg" />
+                        <h2>item 2</h2>
+                        <br />
+                        <p>
+                            price:$500
+                        </p>
+                        <button class="btn btn-success" type="button">
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="item">
+                        <img src="https://i.pinimg.com/236x/f4/c0/2b/f4c02b08f121ec698f0ebf2db878ea73.jpg" />
+                        <h2>item 2</h2>
+                        <br />
+                        <p>
+                            price:$500
+                        </p>
+                        <button class="btn btn-success" type="button">
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="items">
+                    <div class="item">
+                        <img src="https://i.pinimg.com/236x/f4/c0/2b/f4c02b08f121ec698f0ebf2db878ea73.jpg" />
+                        <h2>item 3</h2>
+                        <br />
+                        <p>
+                            price:$500
+                        </p>
+                        <button class="btn btn-success" type="button">
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="item">
+                        <img src="https://i.pinimg.com/236x/f4/c0/2b/f4c02b08f121ec698f0ebf2db878ea73.jpg" />
+                        <h2>item 3</h2>
+                        <br />
+                        <p>
+                            price:$500
+                        </p>
+                        <button class="btn btn-success" type="button">
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="item">
+                        <img src="https://i.pinimg.com/236x/f4/c0/2b/f4c02b08f121ec698f0ebf2db878ea73.jpg" />
+                        <h2>item 3</h2>
+                        <br />
+                        <p>
+                            price:$500
+                        </p>
+                        <button class="btn btn-success" type="button">
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="item">
+                        <img src="https://i.pinimg.com/236x/f4/c0/2b/f4c02b08f121ec698f0ebf2db878ea73.jpg" />
+                        <h2>item 3</h2>
+                        <br />
+                        <p>
+                            price:$500
+                        </p>
+                        <button class="btn btn-success" type="button">
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item ">
+                <div class="items">
+                    <div class="item">
+                        <img src="https://i.pinimg.com/236x/f4/c0/2b/f4c02b08f121ec698f0ebf2db878ea73.jpg" />
+                        <h2>item 4</h2>
+                        <br />
+                        <p>
+                            price:$500
+                        </p>
+                        <button class="btn btn-success" type="button">
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="item">
+                        <img src="https://i.pinimg.com/236x/f4/c0/2b/f4c02b08f121ec698f0ebf2db878ea73.jpg" />
+                        <h2>item 4</h2>
+                        <br />
+                        <p>
+                            price:$500
+                        </p>
+                        <button class="btn btn-success" type="button">
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="item">
+                        <img src="https://i.pinimg.com/236x/f4/c0/2b/f4c02b08f121ec698f0ebf2db878ea73.jpg" />
+                        <h2>item 4</h2>
+                        <br />
+                        <p>
+                            price:$500
+                        </p>
+                        <button class="btn btn-success" type="button">
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+                <div class="items">
+                    <div class="item">
+                        <img src="https://i.pinimg.com/236x/f4/c0/2b/f4c02b08f121ec698f0ebf2db878ea73.jpg" />
+                        <h2>item 4</h2>
+                        <br />
+                        <p>
+                            price:$500
+                        </p>
+                        <button class="btn btn-success" type="button">
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-next carousel-control-next-icon" type="button" data-bs-target="#s" data-bs-slide="next" style="background-color:black;border-radius:50px;margin-top:80px"></button>
+        <button class="carousel-control-prev carousel-control-prev-icon" type="button" data-bs-target="#s" data-bs-slide="prev" style="background-color:black;border-radius:50px;margin-top:80px"></button>
+    </div>
+    <hr />
+    <div ng-controller="ctrl_1" style="width:100%;height:300px">
+        <img style="float:left;width:30%" src="{{src}}" height="500" />
+        <div style="float:right;width:65%;">
+            <p>{{name}}</p>
+            <p>{{detail}}</p>
+            <p>{{prise}}</p>
+            <input id="app1" value="buy" type="button" class="btn btn-success" style="width:100%;" />
+            <input id="app-1" value="app_1" hidden />
+        </div>
+    </div>
+    <br />
+    <div ng-controller="ctrl_2" style="width:100%;height:300px">
+        <img style="float:left;width:30%" src="{{src}}" height="500" />
+        <div style="float:right;width:65%;">
+            <p id="n">{{name}}</p>
+            <p id="d">{{detail}}</p>
+            <p id="p">{{prise}}</p>
+            <input id="app2" value="buy" type="button" class="btn btn-success" style="width:100%;" />
+            <input id="app-2" value="app_2" hidden />
+        </div>
+    </div>
+    <div ng-controller="ctrl_3" style="width:100%;height:300px">
+        <img style="float:left;width:30%" src="{{src}}" height="500" />
+        <div style="float:right;width:65%;">
+            <p id="n">{{name}}</p>
+            <p id="d">{{detail}}</p>
+            <p id="p">{{prise}}</p>
+            <input id="app3" value="buy" type="button" class="btn btn-success" style="width:100%;" />
+            <input id="app-3" value="app_3" hidden />
+        </div>
+    </div>
+    <div ng-controller="ctrl_4" style="width:100%;height:300px">
+        <img style="float:left;width:30%" src="{{src}}" height="500" />
+        <div style="float:right;width:65%;">
+            <p id="n">{{name}}</p>
+            <p id="d">{{detail}}</p>
+            <p id="p">{{prise}}</p>
+            <input id="app4" value="buy" type="button" class="btn btn-success" style="width:100%;" />
+            <input id="app-4" value="app_4" hidden />
+        </div>
+
+    </div>
+    <hr />
+    <br />
+
+    <div id="a_u">
+        <p>09211276811</p>
+    </div>
+
+    <hr style="margin-top:100px;" />
+    <footer>
+        <div style="float:right" class="col-md-8">
+            <ul>
+                <li id="about_us">درباره ما</li>
+                <li id="contact_us">تماس با ما</li>
+                <li>پشتیبانی محصول</li>
+            </ul>
+        </div>
+        <div style="text-align:center" class="col-md-4">
+            sample jobs
+        </div>
+    </footer>
+
+    <script>
+        $(document).ready(function () {
+            //load();
+            //$.get('items/revers', function () {
+            //    alert("ok")
+            //});
+        });
+
+        $("#about_us").hover(function () {
+            $("#a_u").show();
+            $("#a_u").hide(10000);
+        });
+
+        $("#app1").click(function () {
+            $.get('/CARD/add', { x: $("#app-1").val() }, function (data) {
+                alert(data)
+            })
+        });
+        $("#app2").click(function () {
+            $.get('/CARD/add', { x: $("#app-2").val() }, function (data) {
+                alert(data)
+            })
+        });
+        $("#app3").click(function () {
+            $.get('/CARD/add', { x: $("#app-3").val() }, function (data) {
+                alert(data)
+            })
+        });
+        $("#app4").click(function () {
+            $.get('/CARD/add', { x: $("#app-4").val() }, function (data) {
+                alert(data)
+            })
+        });
+        function load() {
+            $.get('items/revers', function () {
+                alert("ok")
+            });
+        }
+
+        var app_1 = angular.module('mainapp', []);
+
+
+        app_1.controller('ctrl_1', function ($scope, $http,$timeout) {
+           $timeout(function () {
+             $http.get('/items/send2').then(function (reason) {
+                    $scope.name = reason.data.name;
+                    $scope.detail = reason.data.detail;
+                    $scope.src = reason.data.img_src;
+                    $scope.prise = reason.data.prise;
+             })
+           }, 500);
+        });
+
+        app_1.controller('ctrl_2', function ($scope, $http, $timeout) {
+            $timeout(function () {
+                $http.get('/items/send2').then(function (reason) {
+                    $scope.name = reason.data.name;
+                    $scope.detail = reason.data.detail;
+                    $scope.src = reason.data.img_src;
+                    $scope.prise = reason.data.prise;
+                })
+            }, 2000);
+        });
+        app_1.controller('ctrl_3', function ($scope, $http, $timeout) {
+            $timeout(function () {
+                $http.get('/items/send2').then(function (reason) {
+                    $scope.name = reason.data.name;
+                    $scope.detail = reason.data.detail;
+                    $scope.src = reason.data.img_src;
+                    $scope.prise = reason.data.prise;
+                })
+            }, 4000);
+        });
+        app_1.controller('ctrl_4', function ($scope, $http, $timeout) {
+            $timeout(function () {
+                $http.get('/items/send2').then(function (reason) {
+                    $scope.name = reason.data.name;
+                    $scope.detail = reason.data.detail;
+                    $scope.src = reason.data.img_src;
+                    $scope.prise = reason.data.prise;
+                })
+            }, 6000);
+        });
+    </script>
+</body>
+</html>

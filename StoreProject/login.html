@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="Content/bootstrap-icons.css" rel="stylesheet" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/jquery-3.3.1.js"></script>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <style>
+        input{
+            text-align:center;
+            display:block;
+            margin:30px;
+            width:400px;
+            height:40px;
+            border-radius:50px;
+        }
+        div{
+            margin:200px auto 0 450px
+        }
+        button{
+            text-align:center;
+            width:200px;
+            height:40px;
+            margin-left:125px
+        }
+    </style>
+    <div>
+        <input id="name" type="text" placeholder="fullname" />
+        <input id="family" type="text" placeholder="username" />
+        <input id="code" type="password" placeholder="passcode" />
+        <input id="code2" type="password" placeholder="passcode2" />
+        <button id="btn" class="btn btn-success">login</button>
+    </div>
+
+    <script>
+
+        function person() {
+            var name = '';
+            var family = '';
+            var number = '';
+        }
+        var p = new person();
+        $("#btn").click(function () {
+            p.name = $("#name").val();
+            p.family = $("#family").val();
+            p.number = $("#code").val();
+            if ($("#code").val() == $("#code2").val()) {
+                $.get('/human/rgister', p, function (data) {
+                    alert(data)
+                });
+            }
+            if ($("#code").val() != $("#code2").val()) {
+                $("#code").val('');
+                $("#code2").val('');
+                alert('رمز یکسان نیست اطفا رمز عبور خود را مجدداوارد کنید')
+            }
+        });
+
+
+
+    </script>
+</body>
+</html>

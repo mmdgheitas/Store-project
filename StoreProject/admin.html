@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="Scripts/jquery-3.3.1.js"></script>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/bootstrap-icons.css" rel="stylesheet" />
+    <script src="Scripts/bootstrap.js"></script>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <style>
+        *{
+            text-align:center;
+        }
+        input{
+            width:200px;
+            height:25px;
+            display:block;
+            margin:20px;
+            margin-left:80px
+        }
+        button{
+            width:200px;
+            height:50px;
+            display:block;
+            margin-left:12px
+        }
+        #center{
+            text-align:center;
+            margin:100px 500px 10px;
+           
+        }
+    </style>
+    <div id="center">
+        <input id="id" hidden/>
+        <input id="name" type="text" placeholder="name" />
+        <input id="code" type="text" placeholder="code_mahsoul" />
+        <input id="img" type="text" placeholder="img_src" />
+        <input id="tedad" type="text" placeholder="tedad" />
+        <input id="prise" type="text" placeholder="prise" />
+        <input id="datil" type="text" placeholder="details"/>
+        <button class="btn btn-success" id="btn">save</button>
+    </div>
+    
+
+    <div class="col-md-12">
+        <button id="btn_delete" class="col-md-3  btn btn-danger">delete</button>
+        <button id="btn_" class="col-md-4 btn">find</button>
+        <button id="btn_update" class="col-md-3  btn btn-info">update</button>
+    </div>
+
+    <table id="table" class="table">
+        <tr>
+            <th>name</th>
+            <th>code</th>
+            <th>img_src</th>
+            <th>tedad</th>
+            <th>prise</th>
+            <th>detail</th>
+        </tr>
+    </table>
+
+
+
+    <script>
+        function IItem() {
+            var id = 0;
+            var name = "";
+            var code_mahsoul = "";
+            var detail = "";
+            var img_src = "";
+            var exist = "";
+            var prise = 0;
+        }
+        var item = new IItem();
+        var current;
+        var id;
+        $(document).ready(function () {
+            $.get('/admin/readall', function (data) {
+                for (var i in data) {
+                    $("#table").append('<tr><td>' + JSON.stringify(data[i].name) + '</td><td>' + JSON.stringify(data[i].code_mahsoul) + '</td><td>' + JSON.stringify(data[i].img_src) + '</td><td>' + JSON.stringify(data[i].exist) + '</td><td>' + JSON.stringify(data[i].prise) + '</td><td>' + JSON.stringify(data[i].detail) + '</td></tr>')
+                }
+            })
+        })
+
+        //$("#table    tr").dblclick(function () {
+        //    //current = $(this);
+        //    //id = currrent.find("td:eq(1)").text();
+        //    //find(id);
+        //    $(this).css('background-color', 'green');
+        //    alert('ok')
+        //});
+
+        $("#btn_update").click(function () {
+            item.id = $("#id").val();
+            item.name = $("#name").val();
+            item.code_mahsoul = $("#code").val();
+            item.img_src = $("#img").val();
+            item.exist = $("#tedad").val();
+            item.detail = $("#datil").val();
+            item.prise = $("#prise").val();
+            $.get('/admin/update', item, function (data) {
+                alert(data)
+            });
+            //alert('ok')
+        });
+
+        $("#btn_").click(function () {
+            if ($("#code").val() != 0) {
+                find($("#code").val())
+            }
+            if ($("#code").val() == 0) {
+                alert('لطفا کد محصول مورد نظر را وارد کنید')
+            }
+        })
+
+        function find(p) {
+            $.get('/admin/find', { x: p }, function (data) {
+                $("#id").val(data.id);
+                $("#name").val(data.name);
+                $("#code").val(data.code_mahsoul);
+                $("#img").val(data.img_src);
+                $("#tedad").val(data.exist);
+                $("#prise").val(data.prise);
+                $("#datil").val(data.detail);
+            });
+        }
+
+        $('#btn').click(function () {
+            item.id = $("#id").val();
+            item.name = $("#name").val();
+            item.code_mahsoul = $("#code").val();
+            item.img_src = $("#img").val();
+            item.exist = $("#tedad").val();
+            item.detail = $("#datil").val();
+            item.prise = $("#prise").val();
+            $.get('/admin/create', item, function (dta) {
+                alert(dta)
+            });
+        });
+
+        $("#btn_delete").click(function () {
+            $.get('/admin/delete', { id: $("#id").val() }, function (data) {
+                alert(data)
+            });
+        });
+
+    </script>
+</body>
+</html>
